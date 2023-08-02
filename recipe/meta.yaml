@@ -1,5 +1,5 @@
 {% set name = "floret" %}
-{% set version = "0.10.2" %}
+{% set version = "0.10.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://github.com/explosion/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 9f4c2c0abbee7945b1787c0b4fc46a53b794179f1f10a63feee249b971a2ccae
+  sha256: 5dce4f786b6306e07ce2abe2fdb9548d741ec16e20a3b0149f8a7c3e0c1eb44c
   patches:
     - 0001_do_not_hardcode_compiler.patch
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -39,7 +39,7 @@ test:
 
 about:
   home: https://github.com/explosion/floret
-  summary: 'fastText + Bloom embeddings for compact, full-coverage vectors with spaCy'
+  summary: fastText + Bloom embeddings for compact, full-coverage vectors with spaCy
   description: |
     floret is an extended version of fastText that can produce word 
     representations for any word from a compact vector table. It combines:
