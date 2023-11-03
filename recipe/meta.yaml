@@ -1,5 +1,5 @@
 {% set name = "floret" %}
-{% set version = "0.10.4" %}
+{% set version = "0.10.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://github.com/explosion/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 5dce4f786b6306e07ce2abe2fdb9548d741ec16e20a3b0149f8a7c3e0c1eb44c
+  sha256: 3460d35c83238319c75d5c53618fd92e31040e8a8e642c7b6e1f01af0bfa59fa
   patches:
     - 0001_do_not_hardcode_compiler.patch
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   build:
