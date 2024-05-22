@@ -13,11 +13,12 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - make
   host:
     - python
@@ -27,7 +28,6 @@ requirements:
     - setuptools >=0.7.0
   run:
     - python
-    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
